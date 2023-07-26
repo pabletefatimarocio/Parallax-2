@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>parallax</title>
+    <link rel="stylesheet" type="text/css" href="style.css" >
+</head>
+<body>
+
+    <section>
+      <img src="bg.png" id="bg">
+      <img src="dragon2.png" id="dragon2">
+      <img src="castillo.png" id="castillo">
+      <img src="piso.png" id="piso">
+      <h2 id="text">Parallax</h2>
+    </section>
+    
+    <script type="text/javascript">
+        let bg = document.getElementById("bg");
+        let dragon = document.getElementById("dragon2");
+        let castillo = document.getElementById("castillo");
+        let piso = document.getElementById("piso");
+        let text = document.getElementById("text");
+
+        window.addEventListener('scroll', function(){
+            var value = window.scrollY;
+            
+            bg.style.top = value * 0.5 + 'px';
+            dragon.style.left = -value * 0.5 + 'px';
+            castillo.style.top = -value * 0.15 + 'px';
+            piso.style.top = value * 0.15 + 'px';
+            text.style.top = value * 1 + 'px';
+
+        })
+    </script>
+</body>
+</html>
